@@ -18,7 +18,7 @@ public struct PagingData {
     let last: Int
     let per: Int
     
-    init(current c: Int, last l: Int, per p: Int) {
+    public init(current c: Int, last l: Int, per p: Int) {
         current = max(c, 1)
         last = l < current ? current : l
         next = current == last ? nil : current + 1
@@ -36,13 +36,13 @@ public struct PagingData {
     }
     
     /// Determines the starting items index for the current page. (assuming you loaded all pages before the current page)
-    var startingItemIndex: Int {
+    public var startingItemIndex: Int {
         let c = max(current - 1, 0)
         return c * per
     }
     
     /// Creates an stack array of PagingDatas, current page being at top of stack.
-    var indexedPages: [PagingData] {
+    public var indexedPages: [PagingData] {
         
         var l = last
         var indexedPages: [PagingData] = []
@@ -57,25 +57,25 @@ public struct PagingData {
     }
     
     /// Estimates the items left to download based on current page, last page, and items per page.
-    var itemsLeftToDownload: Int {
+    public var itemsLeftToDownload: Int {
         let itemsLeft = (last + 1 - current) * per
         return itemsLeft > 0 ? itemsLeft : 0
     }
     
     /// returns new pagingData for next page. If current page is last page, returns nil
-    var increment: PagingData? {
+    public var increment: PagingData? {
         if current == last { return nil }
         return PagingData(current: max(current + 1, 1), last: last, per: per)
     }
     
     /// returns new pagingData for previous page.  If current page is first page, returns nil.
-    var decrement: PagingData? {
+    public var decrement: PagingData? {
         if current == 1 { return nil }
         return PagingData(current: max(current - 1, 1), last: last, per: per)
     }
     
     /// returns a PagingData with an update per value
-    func update(per: Int) -> PagingData {
+    public func update(per: Int) -> PagingData {
         return PagingData(current: self.current,
                           last: self.last,
                           per: per)

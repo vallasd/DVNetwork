@@ -125,7 +125,6 @@
 				6C7B4B42C536601FE8CF28C4 /* Pods-DVNetwork.debug.xcconfig */,
 				7103280ADDB9C959E6B2E177 /* Pods-DVNetwork.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -148,6 +147,7 @@
 			buildConfigurationList = 03B482C022E60207002CAFCC /* Build configuration list for PBXNativeTarget "DVNetwork" */;
 			buildPhases = (
 				0FE58F99C70550D1BFE7920D /* [CP] Check Pods Manifest.lock */,
+				03B483C922E7D532002CAFCC /* ShellScript */,
 				03B482A722E60207002CAFCC /* Headers */,
 				03B482A822E60207002CAFCC /* Sources */,
 				03B482A922E60207002CAFCC /* Frameworks */,
@@ -235,6 +235,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		03B483C922E7D532002CAFCC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# comment this next line to refresh local pods during build \n# exit 0\n\nif [ ! -f Podfile.local ]; then\necho \"Podfile.local does not exist\" >&2\nexit 1\nfi\n\nif [ ! -f Podfile.remote ]; then\necho \"Podfile.remote does not exist\" >&2\nexit 1\nfi\n\nif [ ! -d `../HGCodable` ]; then\necho \"HGCodable does not exist\" >&2\nexit 1\nfi\n\nif [ ! -d `../HGReport` ]; then\necho \"HGReport does not exist\" >&2\nexit 1\nfi\n\ncp Podfile.local Podfile\npod install\ncp Podfile.remote Podfile\necho \"Local Pods Installed\" >&2\n";
+		};
 		0FE58F99C70550D1BFE7920D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

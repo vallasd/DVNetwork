@@ -56,8 +56,8 @@ public enum DVResultWithPagingData<A> {
 
 /// A generic Value that also contains an optional PagingData
 public struct ValueWithPagingData<A> {
-    let value: A
-    let pagingData: PagingData?
+    public let value: A
+    public let pagingData: PagingData?
     
     init(value v: A, pagingData pd: PagingData?) {
         value = v
