@@ -7,151 +7,167 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03B482B622E60207002CAFCC /* DVNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B482AC22E60207002CAFCC /* DVNetwork.framework */; };
-		03B482BB22E60207002CAFCC /* DVNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B482BA22E60207002CAFCC /* DVNetworkTests.swift */; };
-		03B482BD22E60207002CAFCC /* DVNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 03B482AF22E60207002CAFCC /* DVNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		03B482C922E60264002CAFCC /* DVNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B482C622E60264002CAFCC /* DVNetwork.swift */; };
-		03B482CA22E60264002CAFCC /* DVResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B482C722E60264002CAFCC /* DVResult.swift */; };
-		03B482CB22E60264002CAFCC /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B482C822E60264002CAFCC /* Functional.swift */; };
-		03B482CF22E60270002CAFCC /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B482CC22E6026F002CAFCC /* RequestData.swift */; };
-		03B482D022E60270002CAFCC /* PagingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B482CD22E6026F002CAFCC /* PagingData.swift */; };
-		03B482D122E60270002CAFCC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B482CE22E6026F002CAFCC /* String.swift */; };
-		CEDCC0AA4E524942FEAD280A /* libPods-DVNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BC9236B19F48742770A008 /* libPods-DVNetwork.a */; };
+		03128C0922EA449200F3F5F8 /* DVNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03128BFF22EA449200F3F5F8 /* DVNetwork.framework */; };
+		03128C0E22EA449200F3F5F8 /* DVNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C0D22EA449200F3F5F8 /* DVNetworkTests.swift */; };
+		03128C1022EA449200F3F5F8 /* DVNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 03128C0222EA449200F3F5F8 /* DVNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03128C2822EA45CC00F3F5F8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C1A22EA45CC00F3F5F8 /* Error.swift */; };
+		03128C2922EA45CC00F3F5F8 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C1B22EA45CC00F3F5F8 /* ErrorType.swift */; };
+		03128C2A22EA45CC00F3F5F8 /* DVReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C1C22EA45CC00F3F5F8 /* DVReport.swift */; };
+		03128C2B22EA45CC00F3F5F8 /* DVJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C1E22EA45CC00F3F5F8 /* DVJSON.swift */; };
+		03128C2C22EA45CC00F3F5F8 /* DVCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C1F22EA45CC00F3F5F8 /* DVCodable.swift */; };
+		03128C2D22EA45CC00F3F5F8 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C2022EA45CC00F3F5F8 /* Optional.swift */; };
+		03128C2E22EA45CC00F3F5F8 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C2222EA45CC00F3F5F8 /* Functional.swift */; };
+		03128C2F22EA45CC00F3F5F8 /* PagingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C2322EA45CC00F3F5F8 /* PagingData.swift */; };
+		03128C3022EA45CC00F3F5F8 /* DVNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C2422EA45CC00F3F5F8 /* DVNetwork.swift */; };
+		03128C3122EA45CC00F3F5F8 /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C2522EA45CC00F3F5F8 /* RequestData.swift */; };
+		03128C3222EA45CC00F3F5F8 /* DVResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C2622EA45CC00F3F5F8 /* DVResult.swift */; };
+		03128C3322EA45CC00F3F5F8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C2722EA45CC00F3F5F8 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		03B482B722E60207002CAFCC /* PBXContainerItemProxy */ = {
+		03128C0A22EA449200F3F5F8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 03B482A322E60207002CAFCC /* Project object */;
+			containerPortal = 03128BF622EA449200F3F5F8 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 03B482AB22E60207002CAFCC;
+			remoteGlobalIDString = 03128BFE22EA449200F3F5F8;
 			remoteInfo = DVNetwork;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03B482AC22E60207002CAFCC /* DVNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DVNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		03B482AF22E60207002CAFCC /* DVNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVNetwork.h; sourceTree = "<group>"; };
-		03B482B022E60207002CAFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03B482B522E60207002CAFCC /* DVNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DVNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		03B482BA22E60207002CAFCC /* DVNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVNetworkTests.swift; sourceTree = "<group>"; };
-		03B482BC22E60207002CAFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03B482C622E60264002CAFCC /* DVNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVNetwork.swift; sourceTree = "<group>"; };
-		03B482C722E60264002CAFCC /* DVResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVResult.swift; sourceTree = "<group>"; };
-		03B482C822E60264002CAFCC /* Functional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functional.swift; sourceTree = "<group>"; };
-		03B482CC22E6026F002CAFCC /* RequestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
-		03B482CD22E6026F002CAFCC /* PagingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingData.swift; sourceTree = "<group>"; };
-		03B482CE22E6026F002CAFCC /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		64BC9236B19F48742770A008 /* libPods-DVNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DVNetwork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C7B4B42C536601FE8CF28C4 /* Pods-DVNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVNetwork.debug.xcconfig"; path = "Target Support Files/Pods-DVNetwork/Pods-DVNetwork.debug.xcconfig"; sourceTree = "<group>"; };
-		7103280ADDB9C959E6B2E177 /* Pods-DVNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVNetwork.release.xcconfig"; path = "Target Support Files/Pods-DVNetwork/Pods-DVNetwork.release.xcconfig"; sourceTree = "<group>"; };
+		03128BFF22EA449200F3F5F8 /* DVNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DVNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		03128C0222EA449200F3F5F8 /* DVNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVNetwork.h; sourceTree = "<group>"; };
+		03128C0322EA449200F3F5F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03128C0822EA449200F3F5F8 /* DVNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DVNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03128C0D22EA449200F3F5F8 /* DVNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVNetworkTests.swift; sourceTree = "<group>"; };
+		03128C0F22EA449200F3F5F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03128C1A22EA45CC00F3F5F8 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		03128C1B22EA45CC00F3F5F8 /* ErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
+		03128C1C22EA45CC00F3F5F8 /* DVReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVReport.swift; sourceTree = "<group>"; };
+		03128C1E22EA45CC00F3F5F8 /* DVJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVJSON.swift; sourceTree = "<group>"; };
+		03128C1F22EA45CC00F3F5F8 /* DVCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVCodable.swift; sourceTree = "<group>"; };
+		03128C2022EA45CC00F3F5F8 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
+		03128C2222EA45CC00F3F5F8 /* Functional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functional.swift; sourceTree = "<group>"; };
+		03128C2322EA45CC00F3F5F8 /* PagingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingData.swift; sourceTree = "<group>"; };
+		03128C2422EA45CC00F3F5F8 /* DVNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVNetwork.swift; sourceTree = "<group>"; };
+		03128C2522EA45CC00F3F5F8 /* RequestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
+		03128C2622EA45CC00F3F5F8 /* DVResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVResult.swift; sourceTree = "<group>"; };
+		03128C2722EA45CC00F3F5F8 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		03B482A922E60207002CAFCC /* Frameworks */ = {
+		03128BFC22EA449200F3F5F8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEDCC0AA4E524942FEAD280A /* libPods-DVNetwork.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		03B482B222E60207002CAFCC /* Frameworks */ = {
+		03128C0522EA449200F3F5F8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03B482B622E60207002CAFCC /* DVNetwork.framework in Frameworks */,
+				03128C0922EA449200F3F5F8 /* DVNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03B482A222E60207002CAFCC = {
+		03128BF522EA449200F3F5F8 = {
 			isa = PBXGroup;
 			children = (
-				03B482AE22E60207002CAFCC /* DVNetwork */,
-				03B482B922E60207002CAFCC /* DVNetworkTests */,
-				03B482AD22E60207002CAFCC /* Products */,
-				4F9BB7F221BC30A25A672124 /* Pods */,
-				136FE2A686D886A01C473C2C /* Frameworks */,
+				03128C0122EA449200F3F5F8 /* DVNetwork */,
+				03128C0C22EA449200F3F5F8 /* DVNetworkTests */,
+				03128C0022EA449200F3F5F8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		03B482AD22E60207002CAFCC /* Products */ = {
+		03128C0022EA449200F3F5F8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				03B482AC22E60207002CAFCC /* DVNetwork.framework */,
-				03B482B522E60207002CAFCC /* DVNetworkTests.xctest */,
+				03128BFF22EA449200F3F5F8 /* DVNetwork.framework */,
+				03128C0822EA449200F3F5F8 /* DVNetworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		03B482AE22E60207002CAFCC /* DVNetwork */ = {
+		03128C0122EA449200F3F5F8 /* DVNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				03B482AF22E60207002CAFCC /* DVNetwork.h */,
-				03B482C622E60264002CAFCC /* DVNetwork.swift */,
-				03B482C722E60264002CAFCC /* DVResult.swift */,
-				03B482C822E60264002CAFCC /* Functional.swift */,
-				03B482CD22E6026F002CAFCC /* PagingData.swift */,
-				03B482CC22E6026F002CAFCC /* RequestData.swift */,
-				03B482CE22E6026F002CAFCC /* String.swift */,
-				03B482B022E60207002CAFCC /* Info.plist */,
+				03128C1D22EA45CC00F3F5F8 /* DVCodable */,
+				03128C2122EA45CC00F3F5F8 /* DVNetwork */,
+				03128C1922EA45CC00F3F5F8 /* DVReport */,
+				03128C0222EA449200F3F5F8 /* DVNetwork.h */,
+				03128C0322EA449200F3F5F8 /* Info.plist */,
 			);
 			path = DVNetwork;
 			sourceTree = "<group>";
 		};
-		03B482B922E60207002CAFCC /* DVNetworkTests */ = {
+		03128C0C22EA449200F3F5F8 /* DVNetworkTests */ = {
 			isa = PBXGroup;
 			children = (
-				03B482BA22E60207002CAFCC /* DVNetworkTests.swift */,
-				03B482BC22E60207002CAFCC /* Info.plist */,
+				03128C0D22EA449200F3F5F8 /* DVNetworkTests.swift */,
+				03128C0F22EA449200F3F5F8 /* Info.plist */,
 			);
 			path = DVNetworkTests;
 			sourceTree = "<group>";
 		};
-		136FE2A686D886A01C473C2C /* Frameworks */ = {
+		03128C1922EA45CC00F3F5F8 /* DVReport */ = {
 			isa = PBXGroup;
 			children = (
-				64BC9236B19F48742770A008 /* libPods-DVNetwork.a */,
+				03128C1A22EA45CC00F3F5F8 /* Error.swift */,
+				03128C1B22EA45CC00F3F5F8 /* ErrorType.swift */,
+				03128C1C22EA45CC00F3F5F8 /* DVReport.swift */,
 			);
-			name = Frameworks;
+			path = DVReport;
 			sourceTree = "<group>";
 		};
-		4F9BB7F221BC30A25A672124 /* Pods */ = {
+		03128C1D22EA45CC00F3F5F8 /* DVCodable */ = {
 			isa = PBXGroup;
 			children = (
-				6C7B4B42C536601FE8CF28C4 /* Pods-DVNetwork.debug.xcconfig */,
-				7103280ADDB9C959E6B2E177 /* Pods-DVNetwork.release.xcconfig */,
+				03128C1E22EA45CC00F3F5F8 /* DVJSON.swift */,
+				03128C1F22EA45CC00F3F5F8 /* DVCodable.swift */,
+				03128C2022EA45CC00F3F5F8 /* Optional.swift */,
 			);
-			path = Pods;
+			path = DVCodable;
+			sourceTree = "<group>";
+		};
+		03128C2122EA45CC00F3F5F8 /* DVNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				03128C2222EA45CC00F3F5F8 /* Functional.swift */,
+				03128C2322EA45CC00F3F5F8 /* PagingData.swift */,
+				03128C2422EA45CC00F3F5F8 /* DVNetwork.swift */,
+				03128C2522EA45CC00F3F5F8 /* RequestData.swift */,
+				03128C2622EA45CC00F3F5F8 /* DVResult.swift */,
+				03128C2722EA45CC00F3F5F8 /* String.swift */,
+			);
+			path = DVNetwork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		03B482A722E60207002CAFCC /* Headers */ = {
+		03128BFA22EA449200F3F5F8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03B482BD22E60207002CAFCC /* DVNetwork.h in Headers */,
+				03128C1022EA449200F3F5F8 /* DVNetwork.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		03B482AB22E60207002CAFCC /* DVNetwork */ = {
+		03128BFE22EA449200F3F5F8 /* DVNetwork */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03B482C022E60207002CAFCC /* Build configuration list for PBXNativeTarget "DVNetwork" */;
+			buildConfigurationList = 03128C1322EA449200F3F5F8 /* Build configuration list for PBXNativeTarget "DVNetwork" */;
 			buildPhases = (
-				0FE58F99C70550D1BFE7920D /* [CP] Check Pods Manifest.lock */,
-				03B483C922E7D532002CAFCC /* ShellScript */,
-				03B482A722E60207002CAFCC /* Headers */,
-				03B482A822E60207002CAFCC /* Sources */,
-				03B482A922E60207002CAFCC /* Frameworks */,
-				03B482AA22E60207002CAFCC /* Resources */,
+				03128BFA22EA449200F3F5F8 /* Headers */,
+				03128BFB22EA449200F3F5F8 /* Sources */,
+				03128BFC22EA449200F3F5F8 /* Frameworks */,
+				03128BFD22EA449200F3F5F8 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -159,73 +175,72 @@
 			);
 			name = DVNetwork;
 			productName = DVNetwork;
-			productReference = 03B482AC22E60207002CAFCC /* DVNetwork.framework */;
+			productReference = 03128BFF22EA449200F3F5F8 /* DVNetwork.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		03B482B422E60207002CAFCC /* DVNetworkTests */ = {
+		03128C0722EA449200F3F5F8 /* DVNetworkTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03B482C322E60207002CAFCC /* Build configuration list for PBXNativeTarget "DVNetworkTests" */;
+			buildConfigurationList = 03128C1622EA449200F3F5F8 /* Build configuration list for PBXNativeTarget "DVNetworkTests" */;
 			buildPhases = (
-				03B482B122E60207002CAFCC /* Sources */,
-				03B482B222E60207002CAFCC /* Frameworks */,
-				03B482B322E60207002CAFCC /* Resources */,
+				03128C0422EA449200F3F5F8 /* Sources */,
+				03128C0522EA449200F3F5F8 /* Frameworks */,
+				03128C0622EA449200F3F5F8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				03B482B822E60207002CAFCC /* PBXTargetDependency */,
+				03128C0B22EA449200F3F5F8 /* PBXTargetDependency */,
 			);
 			name = DVNetworkTests;
 			productName = DVNetworkTests;
-			productReference = 03B482B522E60207002CAFCC /* DVNetworkTests.xctest */;
+			productReference = 03128C0822EA449200F3F5F8 /* DVNetworkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		03B482A322E60207002CAFCC /* Project object */ = {
+		03128BF622EA449200F3F5F8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "David Vallas";
 				TargetAttributes = {
-					03B482AB22E60207002CAFCC = {
-						CreatedOnToolsVersion = 10.2.1;
-						LastSwiftMigration = 1020;
+					03128BFE22EA449200F3F5F8 = {
+						CreatedOnToolsVersion = 10.3;
 					};
-					03B482B422E60207002CAFCC = {
-						CreatedOnToolsVersion = 10.2.1;
+					03128C0722EA449200F3F5F8 = {
+						CreatedOnToolsVersion = 10.3;
 					};
 				};
 			};
-			buildConfigurationList = 03B482A622E60207002CAFCC /* Build configuration list for PBXProject "DVNetwork" */;
+			buildConfigurationList = 03128BF922EA449200F3F5F8 /* Build configuration list for PBXProject "DVNetwork" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 03B482A222E60207002CAFCC;
-			productRefGroup = 03B482AD22E60207002CAFCC /* Products */;
+			mainGroup = 03128BF522EA449200F3F5F8;
+			productRefGroup = 03128C0022EA449200F3F5F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03B482AB22E60207002CAFCC /* DVNetwork */,
-				03B482B422E60207002CAFCC /* DVNetworkTests */,
+				03128BFE22EA449200F3F5F8 /* DVNetwork */,
+				03128C0722EA449200F3F5F8 /* DVNetworkTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		03B482AA22E60207002CAFCC /* Resources */ = {
+		03128BFD22EA449200F3F5F8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		03B482B322E60207002CAFCC /* Resources */ = {
+		03128C0622EA449200F3F5F8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -234,82 +249,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		03B483C922E7D532002CAFCC /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# comment this next line to refresh local pods during build \n# exit 0\n\nif [ ! -f Podfile.local ]; then\necho \"Podfile.local does not exist\" >&2\nexit 1\nfi\n\nif [ ! -f Podfile.remote ]; then\necho \"Podfile.remote does not exist\" >&2\nexit 1\nfi\n\nif [ ! -d `../HGCodable` ]; then\necho \"HGCodable does not exist\" >&2\nexit 1\nfi\n\nif [ ! -d `../HGReport` ]; then\necho \"HGReport does not exist\" >&2\nexit 1\nfi\n\ncp Podfile.local Podfile\npod install\ncp Podfile.remote Podfile\necho \"Local Pods Installed\" >&2\n";
-		};
-		0FE58F99C70550D1BFE7920D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DVNetwork-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		03B482A822E60207002CAFCC /* Sources */ = {
+		03128BFB22EA449200F3F5F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03B482D122E60270002CAFCC /* String.swift in Sources */,
-				03B482CB22E60264002CAFCC /* Functional.swift in Sources */,
-				03B482D022E60270002CAFCC /* PagingData.swift in Sources */,
-				03B482CA22E60264002CAFCC /* DVResult.swift in Sources */,
-				03B482C922E60264002CAFCC /* DVNetwork.swift in Sources */,
-				03B482CF22E60270002CAFCC /* RequestData.swift in Sources */,
+				03128C2C22EA45CC00F3F5F8 /* DVCodable.swift in Sources */,
+				03128C3222EA45CC00F3F5F8 /* DVResult.swift in Sources */,
+				03128C3122EA45CC00F3F5F8 /* RequestData.swift in Sources */,
+				03128C2E22EA45CC00F3F5F8 /* Functional.swift in Sources */,
+				03128C2922EA45CC00F3F5F8 /* ErrorType.swift in Sources */,
+				03128C2F22EA45CC00F3F5F8 /* PagingData.swift in Sources */,
+				03128C3322EA45CC00F3F5F8 /* String.swift in Sources */,
+				03128C2A22EA45CC00F3F5F8 /* DVReport.swift in Sources */,
+				03128C2822EA45CC00F3F5F8 /* Error.swift in Sources */,
+				03128C2B22EA45CC00F3F5F8 /* DVJSON.swift in Sources */,
+				03128C3022EA45CC00F3F5F8 /* DVNetwork.swift in Sources */,
+				03128C2D22EA45CC00F3F5F8 /* Optional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		03B482B122E60207002CAFCC /* Sources */ = {
+		03128C0422EA449200F3F5F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03B482BB22E60207002CAFCC /* DVNetworkTests.swift in Sources */,
+				03128C0E22EA449200F3F5F8 /* DVNetworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		03B482B822E60207002CAFCC /* PBXTargetDependency */ = {
+		03128C0B22EA449200F3F5F8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 03B482AB22E60207002CAFCC /* DVNetwork */;
-			targetProxy = 03B482B722E60207002CAFCC /* PBXContainerItemProxy */;
+			target = 03128BFE22EA449200F3F5F8 /* DVNetwork */;
+			targetProxy = 03128C0A22EA449200F3F5F8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		03B482BE22E60207002CAFCC /* Debug */ = {
+		03128C1122EA449200F3F5F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -361,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -373,7 +352,7 @@
 			};
 			name = Debug;
 		};
-		03B482BF22E60207002CAFCC /* Release */ = {
+		03128C1222EA449200F3F5F8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -419,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -431,11 +410,9 @@
 			};
 			name = Release;
 		};
-		03B482C122E60207002CAFCC /* Debug */ = {
+		03128C1422EA449200F3F5F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C7B4B42C536601FE8CF28C4 /* Pods-DVNetwork.debug.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -453,17 +430,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidvallas.DVNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		03B482C222E60207002CAFCC /* Release */ = {
+		03128C1522EA449200F3F5F8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7103280ADDB9C959E6B2E177 /* Pods-DVNetwork.release.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -486,7 +460,7 @@
 			};
 			name = Release;
 		};
-		03B482C422E60207002CAFCC /* Debug */ = {
+		03128C1722EA449200F3F5F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -505,7 +479,7 @@
 			};
 			name = Debug;
 		};
-		03B482C522E60207002CAFCC /* Release */ = {
+		03128C1822EA449200F3F5F8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -527,34 +501,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		03B482A622E60207002CAFCC /* Build configuration list for PBXProject "DVNetwork" */ = {
+		03128BF922EA449200F3F5F8 /* Build configuration list for PBXProject "DVNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03B482BE22E60207002CAFCC /* Debug */,
-				03B482BF22E60207002CAFCC /* Release */,
+				03128C1122EA449200F3F5F8 /* Debug */,
+				03128C1222EA449200F3F5F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03B482C022E60207002CAFCC /* Build configuration list for PBXNativeTarget "DVNetwork" */ = {
+		03128C1322EA449200F3F5F8 /* Build configuration list for PBXNativeTarget "DVNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03B482C122E60207002CAFCC /* Debug */,
-				03B482C222E60207002CAFCC /* Release */,
+				03128C1422EA449200F3F5F8 /* Debug */,
+				03128C1522EA449200F3F5F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03B482C322E60207002CAFCC /* Build configuration list for PBXNativeTarget "DVNetworkTests" */ = {
+		03128C1622EA449200F3F5F8 /* Build configuration list for PBXNativeTarget "DVNetworkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03B482C422E60207002CAFCC /* Debug */,
-				03B482C522E60207002CAFCC /* Release */,
+				03128C1722EA449200F3F5F8 /* Debug */,
+				03128C1822EA449200F3F5F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 03B482A322E60207002CAFCC /* Project object */;
+	rootObject = 03128BF622EA449200F3F5F8 /* Project object */;
 }

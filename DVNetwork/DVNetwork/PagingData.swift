@@ -1,13 +1,26 @@
+//    The MIT License (MIT)
 //
-//  HGPagingData.swift
-//  HuckleberryNetwork
+//    Copyright (c) 2018 David C. Vallas (david_vallas@yahoo.com) (dcvallas@twitter)
 //
-//  Created by David Vallas on 5/4/18.
-//  Copyright © 2018 David Vallas. All rights reserved.
+//    Permission is hereby granted, free of charge, to any person obtaining a copy
+//    of this software and associated documentation files (the "Software"), to deal
+//    in the Software without restriction, including without limitation the rights
+//    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//    copies of the Software, and to permit persons to whom the Software is
+//    furnished to do so, subject to the following conditions:
 //
+//    The above copyright notice and this permission notice shall be included in all
+//    copies or substantial portions of the Software.
+//
+//    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//    SOFTWARE
 
 import Foundation
-import HGCodable
 
 /// PagingData is used to iterate through requests which contain more than one page.
 public struct PagingData {
@@ -101,10 +114,10 @@ public struct PagingData {
         if let d = data {
             do {
                 let json = try JSONSerialization.jsonObject(with: d, options: [.allowFragments])
-                if let j = json as? HGDICT {
+                if let j = json as? DVDICT {
                     
                     // attempt to create paging data (Flickr paging)
-                    if let photos = j["photos"] as? HGDICT {
+                    if let photos = j["photos"] as? DVDICT {
                         let current = photos["page"].int
                         let last = photos["pages"].int
                         let per = photos["perpage"].int

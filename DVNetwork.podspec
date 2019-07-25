@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "DVNetwork"
-  spec.version      = "0.1.0"
+  spec.version      = "0.1.2"
   spec.summary      = "DVNetwork handles network requests in Swift"
 
   # This description is used to generate tags and improve search results.
@@ -115,7 +115,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.framework  = "UIKit"
-  spec.dependency 'HGCodable'
+  # spec.dependency 'HGCodable'
   # spec.frameworks = "SomeFramework", "AnotherFramework"
 
   # spec.library   = "iconv"
