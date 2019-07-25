@@ -26,7 +26,7 @@ public typealias JSON = Any
 public typealias DVDICT = Dictionary<String, Any>
 public typealias DVARRAY = [DVDICT]
 
-public class DV {
+public class DVDecode {
     
     /// Returns an DVDICT.  If DVDICT can not be unwrapped as DVDICT, produces an error message and returns an empty DVDICT.
     public static func decode<T>(dvdict: Any, decoder: T) -> DVDICT {

@@ -13,7 +13,7 @@
 		03128C2822EA45CC00F3F5F8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C1A22EA45CC00F3F5F8 /* Error.swift */; };
 		03128C2922EA45CC00F3F5F8 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C1B22EA45CC00F3F5F8 /* ErrorType.swift */; };
 		03128C2A22EA45CC00F3F5F8 /* DVReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C1C22EA45CC00F3F5F8 /* DVReport.swift */; };
-		03128C2B22EA45CC00F3F5F8 /* DVJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C1E22EA45CC00F3F5F8 /* DVJSON.swift */; };
+		03128C2B22EA45CC00F3F5F8 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C1E22EA45CC00F3F5F8 /* JSON.swift */; };
 		03128C2C22EA45CC00F3F5F8 /* DVCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C1F22EA45CC00F3F5F8 /* DVCodable.swift */; };
 		03128C2D22EA45CC00F3F5F8 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C2022EA45CC00F3F5F8 /* Optional.swift */; };
 		03128C2E22EA45CC00F3F5F8 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03128C2222EA45CC00F3F5F8 /* Functional.swift */; };
@@ -44,7 +44,7 @@
 		03128C1A22EA45CC00F3F5F8 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		03128C1B22EA45CC00F3F5F8 /* ErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		03128C1C22EA45CC00F3F5F8 /* DVReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVReport.swift; sourceTree = "<group>"; };
-		03128C1E22EA45CC00F3F5F8 /* DVJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVJSON.swift; sourceTree = "<group>"; };
+		03128C1E22EA45CC00F3F5F8 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		03128C1F22EA45CC00F3F5F8 /* DVCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVCodable.swift; sourceTree = "<group>"; };
 		03128C2022EA45CC00F3F5F8 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		03128C2222EA45CC00F3F5F8 /* Functional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functional.swift; sourceTree = "<group>"; };
@@ -126,8 +126,8 @@
 		03128C1D22EA45CC00F3F5F8 /* DVCodable */ = {
 			isa = PBXGroup;
 			children = (
-				03128C1E22EA45CC00F3F5F8 /* DVJSON.swift */,
 				03128C1F22EA45CC00F3F5F8 /* DVCodable.swift */,
+				03128C1E22EA45CC00F3F5F8 /* JSON.swift */,
 				03128C2022EA45CC00F3F5F8 /* Optional.swift */,
 			);
 			path = DVCodable;
@@ -263,7 +263,7 @@
 				03128C3322EA45CC00F3F5F8 /* String.swift in Sources */,
 				03128C2A22EA45CC00F3F5F8 /* DVReport.swift in Sources */,
 				03128C2822EA45CC00F3F5F8 /* Error.swift in Sources */,
-				03128C2B22EA45CC00F3F5F8 /* DVJSON.swift in Sources */,
+				03128C2B22EA45CC00F3F5F8 /* JSON.swift in Sources */,
 				03128C3022EA45CC00F3F5F8 /* DVNetwork.swift in Sources */,
 				03128C2D22EA45CC00F3F5F8 /* Optional.swift in Sources */,
 			);

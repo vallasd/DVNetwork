@@ -123,7 +123,7 @@ precedencegroup ChainFromRightPrecedence {
 
 infix operator <<<: ChainFromRightPrecedence
 
-func <<< (lhs: inout AnyObject?, rhs: String) {
+public func <<< (lhs: inout AnyObject?, rhs: String) {
     if lhs is String { lhs = rhs as AnyObject?; return }
     lhs = nil
 }
