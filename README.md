@@ -14,26 +14,21 @@ Easily make JSON encodable/decodable network requests using generics in Swift.
 
 ## Demostration
 
-```swift
-
+```
+CODE HERE
 ```
 
-## Cocoapod
+## Installation
 
 ```
-platform :ios, '12.2'
-
-source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/vallasd/CocoaPodSpecs'
-
-target 'AppName' do
-    pod 'DVNetwork'
-end
+Use Swift Package Manager
 ```
 
 ## Dependencies
 
-[HGCodable](https://github.com/vallasd/HGCodable) 
+```
+none
+```
 
 ## Contributors
 
