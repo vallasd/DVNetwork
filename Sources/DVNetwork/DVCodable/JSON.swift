@@ -23,23 +23,23 @@
 import Foundation
 
 public typealias JSON = Any
-public typealias DVDICT = Dictionary<String, Any>
-public typealias DVARRAY = [DVDICT]
+public typealias DICT = Dictionary<String, Any>
+public typealias ARRAY = [DICT]
 
 public class DVDecode {
     
     /// Returns an DVDICT.  If DVDICT can not be unwrapped as DVDICT, produces an error message and returns an empty DVDICT.
-    public static func decode<T>(dvdict: Any, decoder: T) -> DVDICT {
-        if let dict = dvdict as? DVDICT { return dict }
+    public static func decode<T>(dvdict: Any, decoder: T) -> DICT {
+        if let dict = dvdict as? DICT { return dict }
         DVReport.shared.decodeFailed(decoder, object: dvdict)
-        return DVDICT()
+        return DICT()
     }
     
     /// Returns an DVARRAY.  If DVARRAY can not be unwrapped as DVARRAY, produces an error message and returns an empty DVARRAY.
-    public static func decode<T>(dvarray: Any, decoder: T) -> DVARRAY {
-        if let array = dvarray as? DVARRAY { return array }
+    public static func decode<T>(dvarray: Any, decoder: T) -> ARRAY {
+        if let array = dvarray as? ARRAY { return array }
         DVReport.shared.decodeFailed(decoder, object: dvarray)
-        return DVARRAY()
+        return ARRAY()
     }
     
 }

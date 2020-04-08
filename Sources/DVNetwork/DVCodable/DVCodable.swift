@@ -26,26 +26,26 @@ import Foundation
 public protocol DVCodable {
     var entityName: String { get }
     var encode: JSON { get }
-    static func decode(object: JSON) throws -> Self
-    static func decode(object: JSON) throws -> [Self]
+    static func decode(json: JSON) throws -> Self
+    static func decode(json: JSON) throws -> [Self]
 }
 
 public extension DVCodable {
     
     /// Attempts to decode an object into an array of objects of Type DVCodable.  Returns empty array an reports Error if unable to make an array.
-    static func decode(object: JSON) throws -> [Self] {
+    static func decode(json: JSON) throws -> [Self] {
         
         do {
-            guard let a = object as? DVARRAY else {
-                DVReport.shared.decodeFailed(DVARRAY.self, object: object)
+            guard let array = json as? ARRAY else {
+                DVReport.shared.decodeFailed(ARRAY.self, object: json)
                 return []
             }
-            var array: [Self] = []
-            for object in a {
-                let decodedObject: Self = try decode(object: object)
-                array.append(decodedObject)
+            var decodeds: [Self] = []
+            for json in array {
+                let decoded: Self = try decode(json: json)
+                decodeds.append(decoded)
             }
-            return array
+            return decodeds
         } catch {
             throw error
         }
@@ -75,7 +75,7 @@ public extension DVCodable {
     static func openDefaults(_ key: String) throws -> Self? {
         let defaults = UserDefaults.standard
         guard let object = defaults.object(forKey: key) else { return nil }
-        let decoded: Self? = try? Self.decode(object: object)
+        let decoded: Self? = try? Self.decode(json: object)
         return decoded
     }
 }
@@ -86,14 +86,14 @@ public extension DVCodable where Self: Hashable {
     static func decode(object: Any) throws -> Set<Self> {
         
         do {
-            guard let a = object as? DVARRAY else {
-                DVReport.shared.decodeFailed(DVARRAY.self, object: object)
+            guard let a = object as? ARRAY else {
+                DVReport.shared.decodeFailed(ARRAY.self, object: object)
                 return []
             }
             
             var set: Set<Self> = []
             for object in a {
-                let decodedObject: Self = try decode(object: object)
+                let decodedObject: Self = try decode(json: object)
                 let inserted = set.insert(decodedObject).inserted
                 if !inserted {
                     DVReport.shared.setDecodeFailed(Self.self, object: decodedObject)

@@ -105,7 +105,7 @@ func decodeJSON(data: Data) -> DVResult<JSON> {
 /// decodes a single object
 func decodeObject<T: DVCodable>(json: JSON) -> DVResult<T> {
     do {
-        let object: T = try T.decode(object: json)
+        let object: T = try T.decode(json: json)
         return DVResult(object)
     } catch {
         return DVResult(error)
@@ -115,7 +115,7 @@ func decodeObject<T: DVCodable>(json: JSON) -> DVResult<T> {
 /// decodes an array of objects
 func decodeObject<T: DVCodable>(json: JSON) -> DVResult<[T]> {
     do {
-        let object: [T] = try T.decode(object: json)
+        let object: [T] = try T.decode(json: json)
         return DVResult(object)
     } catch {
         return DVResult(error)

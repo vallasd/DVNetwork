@@ -22,6 +22,14 @@
 
 import UIKit
 
+var errorEntity: String = "UnknownEntity"
+
+enum UnwrapError: Error {
+    case tooShort
+    case tooLong
+    case invalidCharacterFound(Character)
+}
+
 public extension Error {
     
     /// Creates a UIAlertController from Error message
