@@ -22,14 +22,14 @@
 
 import Foundation
 
-/// we are making an external var because creating a date formatter can be expensive if done a lot
+// we are making an external var because creating a date formatter can be expensive if done a lot
 fileprivate var dateFormatter1: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
     return formatter
 }()
 
-
+// we are making an external var because creating a date formatter can be expensive if done a lot
 fileprivate var dateFormatter2: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
