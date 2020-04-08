@@ -28,17 +28,17 @@ public typealias ARRAY = [DICT]
 
 public class DVDecode {
     
-    /// Returns an DVDICT.  If DVDICT can not be unwrapped as DVDICT, produces an error message and returns an empty DVDICT.
-    public static func decode<T>(dvdict: Any, decoder: T) -> DICT {
-        if let dict = dvdict as? DICT { return dict }
-        DVReport.shared.decodeFailed(decoder, object: dvdict)
+    /// Returns an DICT.  If DICT can not be unwrapped as DICT, produces an error message and returns an empty DICT.
+    public static func decode<T>(json: Any, decoder: T) -> DICT {
+        if let dict = json as? DICT { return dict }
+        DVReport.shared.decodeFailed(decoder, object: json)
         return DICT()
     }
     
-    /// Returns an DVARRAY.  If DVARRAY can not be unwrapped as DVARRAY, produces an error message and returns an empty DVARRAY.
-    public static func decode<T>(dvarray: Any, decoder: T) -> ARRAY {
-        if let array = dvarray as? ARRAY { return array }
-        DVReport.shared.decodeFailed(decoder, object: dvarray)
+    /// Returns an ARRAY.  If ARRAY can not be unwrapped as ARRAY, produces an error message and returns an empty ARRAY.
+    public static func decode<T>(json: Any, decoder: T) -> ARRAY {
+        if let array = json as? ARRAY { return array }
+        DVReport.shared.decodeFailed(decoder, object: json)
         return ARRAY()
     }
     

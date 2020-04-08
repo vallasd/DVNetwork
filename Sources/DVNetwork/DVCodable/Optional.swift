@@ -88,15 +88,15 @@ enum DecodeType {
 
 public extension Optional {
     
-    var array: DVARRAY {
-        if let array = self as? DVARRAY { return array }
-        DVReport.shared.optionalFailed(DVARRAY.self, object: self, returning: [])
+    var array: ARRAY {
+        if let array = self as? ARRAY { return array }
+        DVReport.shared.optionalFailed(ARRAY.self, object: self, returning: [])
         return []
     }
 
-    var dict: DVDICT {
-        if let dict = self as? DVDICT { return dict }
-        DVReport.shared.optionalFailed(DVDICT.self, object: self, returning: [:])
+    var dict: DICT {
+        if let dict = self as? DICT { return dict }
+        DVReport.shared.optionalFailed(DICT.self, object: self, returning: [:])
         return [:]
     }
 

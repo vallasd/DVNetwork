@@ -114,10 +114,10 @@ public struct PagingData {
         if let d = data {
             do {
                 let json = try JSONSerialization.jsonObject(with: d, options: [.allowFragments])
-                if let j = json as? DVDICT {
+                if let j = json as? DICT {
                     
                     // attempt to create paging data (Flickr paging)
-                    if let photos = j["photos"] as? DVDICT {
+                    if let photos = j["photos"] as? DICT {
                         let current = photos["page"].int
                         let last = photos["pages"].int
                         let per = photos["perpage"].int
