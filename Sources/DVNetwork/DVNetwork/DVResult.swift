@@ -23,15 +23,19 @@
 import Foundation
 
 /// A result that can either be a generic Value or an Error
-public enum DVResult<A> {
+public enum DVResult<T> {
     case error(Error)
-    case value(A)
+    case value(T)
     
-    init(_ value: A) {
+    init(_ error: Error) {
+        self = .error(error)
+    }
+    
+    init(_ value: T) {
         self = .value(value)
     }
     
-    init(_ error: Error?, _ value: A) {
+    init(_ error: Error?, _ value: T) {
         if let e = error {
             self = .error(e)
         } else {
@@ -100,14 +104,23 @@ func decodeJSON(data: Data) -> DVResult<JSON> {
 
 /// decodes a single object
 func decodeObject<T: DVCodable>(json: JSON) -> DVResult<T> {
-    let object: T = T.decode(object: json)
-    return DVResult(object)
+    do {
+        let object: T = try T.decode(object: json)
+        return DVResult(object)
+    } catch {
+        return DVResult(error)
+    }
 }
 
 /// decodes an array of objects
 func decodeObject<T: DVCodable>(json: JSON) -> DVResult<[T]> {
-    let objects: [T] = T.decode(object: json)
-    return DVResult(objects)
+    do {
+        let object: [T] = try T.decode(object: json)
+        return DVResult(object)
+    } catch {
+        return DVResult(error)
+    }
+    
 }
 
 /// Direct chaining with Result

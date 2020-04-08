@@ -24,26 +24,31 @@ import Foundation
 
 /// Protocol for Coding and Decoding objects.  Different than swifts Codable and Encodable protocol in that an DVCodable object is expected to return itself, not an optional or thrown error.  User is expected to use default values and handle error reporting within the encode and decode functions. (Use DVOptional, to unwrap Primitives with proper error reporting) This Folder is dependent on DVReport.
 public protocol DVCodable {
-    var encode: Any { get }
-    static func decode(object: Any) -> Self
-    static func decode(object: Any) -> [Self]
+    var entityName: String { get }
+    var encode: JSON { get }
+    static func decode(object: JSON) throws -> Self
+    static func decode(object: JSON) throws -> [Self]
 }
 
 public extension DVCodable {
     
     /// Attempts to decode an object into an array of objects of Type DVCodable.  Returns empty array an reports Error if unable to make an array.
-    static func decode(object: Any) -> [Self] {
+    static func decode(object: JSON) throws -> [Self] {
         
-        guard let a = object as? DVARRAY else {
-            DVReport.shared.decodeFailed(DVARRAY.self, object: object)
-            return []
+        do {
+            guard let a = object as? DVARRAY else {
+                DVReport.shared.decodeFailed(DVARRAY.self, object: object)
+                return []
+            }
+            var array: [Self] = []
+            for object in a {
+                let decodedObject: Self = try decode(object: object)
+                array.append(decodedObject)
+            }
+            return array
+        } catch {
+            throw error
         }
-        var array: [Self] = []
-        for object in a {
-            let decodedObject: Self = decode(object: object)
-            array.append(decodedObject)
-        }
-        return array
     }
     
     // MARK: - User Defaults
@@ -61,42 +66,43 @@ public extension DVCodable {
     
     /// Switches key names for object in standard user defaults
     static func switchDefaults(oldkey: String, newkey: String) {
-        let project = UserDefaults.standard.value(forKey: oldkey)
-        UserDefaults.standard.setValue(project, forKey: newkey)
+        let def = UserDefaults.standard.value(forKey: oldkey)
+        UserDefaults.standard.setValue(def, forKey: newkey)
         UserDefaults.standard.removeObject(forKey: oldkey)
     }
     
     /// Opens and decodes object from standard user defaults given a key
-    static func openDefaults(_ key: String) -> Self? {
+    static func openDefaults(_ key: String) throws -> Self? {
         let defaults = UserDefaults.standard
-        if let object = defaults.object(forKey: key) {
-            let decoded: Self = Self.decode(object: object)
-            return decoded
-        }
-        DVReport.shared.defaultsFailed(Self.self, key: key)
-        return nil
+        guard let object = defaults.object(forKey: key) else { return nil }
+        let decoded: Self? = try? Self.decode(object: object)
+        return decoded
     }
 }
 
 public extension DVCodable where Self: Hashable {
     
     /// Decodes an array of objects into an set of [DVCodable]
-    static func decode(object: Any) -> Set<Self> {
+    static func decode(object: Any) throws -> Set<Self> {
         
-        guard let a = object as? DVARRAY else {
-            DVReport.shared.decodeFailed(DVARRAY.self, object: object)
-            return []
-        }
-        
-        var set: Set<Self> = []
-        for object in a {
-            let decodedObject: Self = decode(object: object)
-            let inserted = set.insert(decodedObject).inserted
-            if !inserted {
-                DVReport.shared.setDecodeFailed(Self.self, object: decodedObject)
+        do {
+            guard let a = object as? DVARRAY else {
+                DVReport.shared.decodeFailed(DVARRAY.self, object: object)
+                return []
             }
+            
+            var set: Set<Self> = []
+            for object in a {
+                let decodedObject: Self = try decode(object: object)
+                let inserted = set.insert(decodedObject).inserted
+                if !inserted {
+                    DVReport.shared.setDecodeFailed(Self.self, object: decodedObject)
+                }
+            }
+            return set
+        } catch {
+            throw error
         }
-        return set
     }
 }
 
