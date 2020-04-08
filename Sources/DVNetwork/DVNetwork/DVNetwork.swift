@@ -26,7 +26,7 @@ import Foundation
 public class DVNetwork {
     
     public static let shared = DVNetwork()
-    
+
     public var processNetworkCompletionHandlersOnMainThread = true
     
     // MARK: - Public Functions

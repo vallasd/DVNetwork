@@ -22,7 +22,7 @@
 
 import Foundation
 
-/// Protocol for Coding and Decoding objects.  Different than swifts Codable and Encodable protocol in that an DVCodable object is expected to return itself, not an optional or thrown error.  User is expected to use default values and handle error reporting within the encode and decode functions. (Use DVOptional, to unwrap Primitives with proper error reporting) This Folder is dependent on DVReport.
+/// Protocol for Coding and Decoding objects.
 public protocol DVCodable {
     var entityName: String { get }
     var encode: JSON { get }
