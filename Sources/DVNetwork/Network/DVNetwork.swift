@@ -236,7 +236,7 @@ public class DVNetwork {
             let successRange = 200..<300
             if !successRange.contains(code) {
                 let message = HTTPURLResponse.localizedString(forStatusCode: code)
-                let error = NSError.error(message: message, code: code)
+                let error = DVError.generic
                 return .error(error)
             }
         }
@@ -247,7 +247,7 @@ public class DVNetwork {
         }
         
         // return generic error, if data was nil
-        return .error(NSError.dataError)
+        return .error(DVError.generic)
     }
 
     

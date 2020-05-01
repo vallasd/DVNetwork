@@ -143,7 +143,7 @@ public struct RequestData {
         
         // return error if url can not be created
         guard let url = URL(string: urlString) else {
-            let error = NSError.createURL(urlString)
+            let error = DVError.generic
             return .error(error)
         }
         

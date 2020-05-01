@@ -38,7 +38,7 @@ enum Primitive {
         default:
             if let v = value as? Enum { self = .Enum(v) }
             else {
-                throw CDError.notAny(key: String(describing: type(of: value)), not: Primitive.self)
+                throw DVError.notAny(key: String(describing: type(of: value)), not: Primitive.self)
             }
         }
     }

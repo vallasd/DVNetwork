@@ -97,7 +97,7 @@ func decodeJSON(data: Data) -> DVResult<JSON> {
         let json = try JSONSerialization.jsonObject(with: data, options: [.allowFragments])
         return .value(json)
     } catch {
-        let error = NSError.decodeData
+        let error = DVError.generic
         return .error(error)
     }
 }
@@ -108,7 +108,7 @@ func decodeObject<T: Entity>(json: JSON) -> DVResult<T> {
 // TODO: FIX THIS
 //        let object: T = try decode(json: json)
 //        return DVResult(object)
-        return DVResult(CDError.decodeData)
+        return DVResult(DVError.generic)
     } catch {
         return DVResult(error)
     }
@@ -120,7 +120,7 @@ func decodeObject<T: Entity>(json: JSON) -> DVResult<[T]> {
         // TODO: FIX THIS
 //        let object: [T] = try decode(json: json)
 //        return DVResult(object)
-        return DVResult(CDError.decodeData)
+        return DVResult(DVError.generic)
     } catch {
         return DVResult(error)
     }

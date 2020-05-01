@@ -130,14 +130,14 @@ func decode<T: Entity>(json: JSON, data: EntityData) -> T {
 func decode<T: Entity>(json: JSON) throws -> [T] {
     let new = T.init()
     let data = try EntityData(entity: new)
-    guard let array = json as? JSONArray else { throw CDError.notArray(key: new.entityName) }
+    guard let array = json as? JSONArray else { throw DVError.notArray(key: new.entityName) }
     return array.map({ decode(json: $0, data: data) })
 }
 
 func decode<T: Entity>(json: JSON) throws -> Set<T> {
     let new = T.init()
     let data = try EntityData(entity: new)
-    guard let array = json as? JSONArray else { throw CDError.notArray(key: new.entityName) }
+    guard let array = json as? JSONArray else { throw DVError.notArray(key: new.entityName) }
     return array.mapToSet{ decode(json: $0, data: data) }
 }
 
@@ -145,7 +145,7 @@ func openDefaults<T: Entity>() throws -> T {
     let entity = String(describing: T.self)
     let key = entity
     guard let json = UserDefaults.standard.object(forKey: key) else {
-        throw CDError.failedOpen(key: key, entity: entity)
+        throw DVError.open(key: key).update(header: .defaults(entity))
     }
     let decoded: T = try decode(json: json)
     return decoded
@@ -155,7 +155,7 @@ func openDefaults<T: Entity>() throws -> [T] {
     let entity = String(describing: T.self)
     let key = entity + "Array"
     guard let json = UserDefaults.standard.object(forKey: key) else {
-        throw CDError.failedOpen(key: key, entity: entity)
+        throw DVError.open(key: key).update(header: .defaults(entity))
     }
     let decoded: [T] = try decode(json: json)
     return decoded
@@ -165,7 +165,7 @@ func openDefaults<T: Entity>() throws -> Set<T> {
     let entity = String(describing: T.self)
     let key = entity + "Set"
     guard let json = UserDefaults.standard.object(forKey: key) else {
-        throw CDError.failedOpen(key: key, entity: entity)
+        throw DVError.open(key: key).update(header: .defaults(entity))
     }
     let decoded: Set<T> = try decode(json: json)
     return decoded

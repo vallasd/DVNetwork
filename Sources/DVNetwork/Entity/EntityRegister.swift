@@ -15,7 +15,7 @@ class EntityRegister {
     
     func data(_ entityName: String) throws -> EntityData {
         if let d = datas[entityName] { return d }
-        throw CDError.notRegistered(key: entityName)
+        throw DVError.notRegistered(key: entityName)
     }
 
     func register<T: Entity>(_ entity: T.Type) throws {
