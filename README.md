@@ -9,7 +9,7 @@ Framework for making network request in Swift
 ## Motivation
 
 ```
-Easily make JSON encodable/decodable network requests using generics in Swift.
+Easily make JSON Entity/entity network requests using generics in Swift.
 ```
 
 ## Demostration

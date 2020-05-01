@@ -96,7 +96,6 @@ public struct PagingData {
     
     /// Attempts to create PagingData from a URLResponse.
     static func pagingData(urlResponse: URLResponse?) -> PagingData? {
-        
         // attempts to determine PagingData from the header field Link (Github paging)
         if let httpResponse = urlResponse as? HTTPURLResponse {
             if let links = httpResponse.allHeaderFields["Link"] as? String {
@@ -104,7 +103,6 @@ public struct PagingData {
                 return pd
             }
         }
-        
         return nil
     }
     
@@ -114,10 +112,10 @@ public struct PagingData {
         if let d = data {
             do {
                 let json = try JSONSerialization.jsonObject(with: d, options: [.allowFragments])
-                if let j = json as? DICT {
+                if let j = json as? JSONDict {
                     
                     // attempt to create paging data (Flickr paging)
-                    if let photos = j["photos"] as? DICT {
+                    if let photos = j["photos"] as? JSONDict {
                         let current = photos["page"].int
                         let last = photos["pages"].int
                         let per = photos["perpage"].int

@@ -32,7 +32,7 @@ public class DVNetwork {
     // MARK: - Public Functions
     
     /// Performs multiple requests based off of PagingData in RequestData.  Will attempt to determine PagingData and return this info to the user with array of DVCodable Objects or Error.  Completion handler will be called for each request called.  If current page is 1, last page is 5 in page data, 1,2,3,4,5 completion times will be called.  If pagingData is nil in RequestData, request will be created without the paging data and run once.
-    public func performRequest<A: DVCodable>(requestData: RequestData, completion: @escaping (DVResultWithPagingData<[A]>) -> ()) {
+    public func performRequest<A: Entity>(requestData: RequestData, completion: @escaping (DVResultWithPagingData<[A]>) -> ()) {
         
         // If pagingData in requestData is nil, we will make a dummy paging.  Dummy page will not be processed in request.
         var pagingData = requestData.pagingData != nil ? requestData.pagingData : PagingData()
@@ -57,7 +57,7 @@ public class DVNetwork {
     }
     
     /// Performs multiple requests based off of PagingData in RequestData.  Will return result as DVCodable Object or Error.  Completion handler will be called for each request called.  If current page is 1, last page is 5 in page data, 1,2,3,4,5 completion times will be called.  If pagingData is nil in RequestData, request will be created without the paging data and run once.
-    public func performRequest<A: DVCodable>(requestData: RequestData, completion: @escaping (DVResult<A>) -> ()) {
+    public func performRequest<A: Entity>(requestData: RequestData, completion: @escaping (DVResult<A>) -> ()) {
         
         // If pagingData in requestData is nil, we will make a dummy paging.  Dummy page will not be processed in request.
         var pagingData = requestData.pagingData != nil ? requestData.pagingData : PagingData()
@@ -82,7 +82,7 @@ public class DVNetwork {
     }
     
     /// Performs multiple requests based off of PagingData in RequestData.  Will return result as array of DVCodable Objects or Error.  Completion handler will be called for each request called.  If current page is 1, last page is 5 in page data, 1,2,3,4,5 completion times will be called.  If pagingData is nil in RequestData, request will be created without the paging data and run once.
-    public func performRequest<A: DVCodable>(requestData: RequestData, completion: @escaping (DVResult<[A]>) -> ()) {
+    public func performRequest<A: Entity>(requestData: RequestData, completion: @escaping (DVResult<[A]>) -> ()) {
         
         // If pagingData in requestData is nil, we will make a dummy paging.  Dummy page will not be processed in request.
         var pagingData = requestData.pagingData != nil ? requestData.pagingData : PagingData()
@@ -107,7 +107,7 @@ public class DVNetwork {
     }
     
     /// Performs a request for URLRequest.  Will return a DVCodable Object or Error.
-    func performRequest<A: DVCodable>(request: URLRequest, completion: @escaping (DVResult<A>) -> ()) {
+    func performRequest<A: Entity>(request: URLRequest, completion: @escaping (DVResult<A>) -> ()) {
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, urlResponse, error in
             guard let s = self else { return }
             let result: DVResult<A> = s.parseResult(data: data, urlResponse: urlResponse, error: error)
@@ -117,7 +117,7 @@ public class DVNetwork {
     }
     
     /// Performs a request for URLRequest.  Will return an array of DVCodable Objects or Error.
-    func performRequest<A: DVCodable>(request: URLRequest, completion: @escaping (DVResult<[A]>) -> ()) {
+    func performRequest<A: Entity>(request: URLRequest, completion: @escaping (DVResult<[A]>) -> ()) {
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, urlResponse, error in
             guard let s = self else { return }
             let result: DVResult<[A]> = s.parseResult(data: data, urlResponse: urlResponse, error: error)
@@ -127,7 +127,7 @@ public class DVNetwork {
     }
     
     /// Performs a request for URLRequest.  Will an array of DVCodable Objects with optional PagingData (if it can be determined) or Error.
-    func performRequest<A: DVCodable>(request: URLRequest, completion: @escaping (DVResultWithPagingData<[A]>) -> ()) {
+    func performRequest<A: Entity>(request: URLRequest, completion: @escaping (DVResultWithPagingData<[A]>) -> ()) {
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, urlResponse, error in
             guard let s = self else { return }
             var result: DVResultWithPagingData<[A]> = s.parseResult(data: data, urlResponse: urlResponse, error: error)
@@ -140,19 +140,19 @@ public class DVNetwork {
     // MARK: - Private Functions
     
     /// Attempts to decode JSON into a DVCodable Object.  Returns object or Error.
-    fileprivate func parseResult<A: DVCodable>(data: Data?, urlResponse: URLResponse?, error: Error?) -> DVResult<A> {
+    fileprivate func parseResult<A: Entity>(data: Data?, urlResponse: URLResponse?, error: Error?) -> DVResult<A> {
         let responseResult: DVResult<Data> = result(data: data, urlResponse: urlResponse, error: error)
         return responseResult >>> decodeJSON >>> decodeObject
     }
     
     /// Attempts to decode JSON into an array of DVCodable Objects.  Returns array of objects or Error.
-    fileprivate func parseResult<A: DVCodable>(data: Data?, urlResponse: URLResponse?, error: Error?) -> DVResult<[A]> {
+    fileprivate func parseResult<A: Entity>(data: Data?, urlResponse: URLResponse?, error: Error?) -> DVResult<[A]> {
         let responseResult: DVResult<Data> = result(data: data, urlResponse: urlResponse, error: error)
         return responseResult >>> decodeJSON >>> decodeObject
     }
     
     /// Attempts to decode JSON into an array of DVCodable Objects.  Returns array objects with optional PagingData or Error.
-    fileprivate func parseResult<A: DVCodable>(data: Data?, urlResponse: URLResponse?, error: Error?) -> (DVResultWithPagingData<[A]>) {
+    fileprivate func parseResult<A: Entity>(data: Data?, urlResponse: URLResponse?, error: Error?) -> (DVResultWithPagingData<[A]>) {
         let result: DVResult<[A]> = parseResult(data: data, urlResponse: urlResponse, error: error)
         let pd = PagingData.pagingData(urlResponse: urlResponse) ?? PagingData.pagingData(data: data)
         let resultWithPagingData = DVResultWithPagingData(result, pagingData: pd)
@@ -160,7 +160,7 @@ public class DVNetwork {
     }
     
     /// Processes completion handler.  (On main thread if processNetworkCompletionHandlersOnMainThread is set to true)
-    fileprivate func process<A: DVCodable>(result: DVResultWithPagingData<[A]>, completion: @escaping (DVResultWithPagingData<[A]>) -> ()) {
+    fileprivate func process<A: Entity>(result: DVResultWithPagingData<[A]>, completion: @escaping (DVResultWithPagingData<[A]>) -> ()) {
         if processNetworkCompletionHandlersOnMainThread {
             DispatchQueue.main.async {
                 completion(result)
@@ -171,7 +171,7 @@ public class DVNetwork {
     }
     
     /// Processes completion handler.  (On main thread if processNetworkCompletionHandlersOnMainThread is set to true)
-    fileprivate func process<A: DVCodable>(result: DVResult<A>, completion: @escaping (DVResult<A>) -> ()) {
+    fileprivate func process<A: Entity>(result: DVResult<A>, completion: @escaping (DVResult<A>) -> ()) {
         if processNetworkCompletionHandlersOnMainThread {
             DispatchQueue.main.async {
                 completion(result)
@@ -182,7 +182,7 @@ public class DVNetwork {
     }
     
     /// Processes completion handler.  (On main thread if processNetworkCompletionHandlersOnMainThread is set to true)
-    fileprivate func process<A: DVCodable>(result: DVResult<[A]>, completion: @escaping (DVResult<[A]>) -> ()) {
+    fileprivate func process<A: Entity>(result: DVResult<[A]>, completion: @escaping (DVResult<[A]>) -> ()) {
         if processNetworkCompletionHandlersOnMainThread {
             DispatchQueue.main.async {
                 completion(result)
@@ -193,7 +193,7 @@ public class DVNetwork {
     }
     
     /// This function tries to update the per page count for a result if we weren't able to find it before
-    fileprivate func resultWithPagingData<A: DVCodable>(result: DVResultWithPagingData<[A]>, request: URLRequest) -> DVResultWithPagingData<[A]> {
+    fileprivate func resultWithPagingData<A: Entity>(result: DVResultWithPagingData<[A]>, request: URLRequest) -> DVResultWithPagingData<[A]> {
         
         switch result {
         case let .value(x):

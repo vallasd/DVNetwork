@@ -103,24 +103,27 @@ func decodeJSON(data: Data) -> DVResult<JSON> {
 }
 
 /// decodes a single object
-func decodeObject<T: DVCodable>(json: JSON) -> DVResult<T> {
+func decodeObject<T: Entity>(json: JSON) -> DVResult<T> {
     do {
-        let object: T = try T.decode(json: json)
-        return DVResult(object)
+// TODO: FIX THIS
+//        let object: T = try decode(json: json)
+//        return DVResult(object)
+        return DVResult(CDError.decodeData)
     } catch {
         return DVResult(error)
     }
 }
 
 /// decodes an array of objects
-func decodeObject<T: DVCodable>(json: JSON) -> DVResult<[T]> {
+func decodeObject<T: Entity>(json: JSON) -> DVResult<[T]> {
     do {
-        let object: [T] = try T.decode(json: json)
-        return DVResult(object)
+        // TODO: FIX THIS
+//        let object: [T] = try decode(json: json)
+//        return DVResult(object)
+        return DVResult(CDError.decodeData)
     } catch {
         return DVResult(error)
     }
-    
 }
 
 /// Direct chaining with Result
